@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template.services
+package com.github.drdreo.tscjetbrainsplugin.services
 
 import org.java_websocket.client.WebSocketClient
 import org.java_websocket.handshake.ServerHandshake

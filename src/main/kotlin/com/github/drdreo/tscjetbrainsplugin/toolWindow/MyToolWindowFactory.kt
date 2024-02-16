@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template.toolWindow
+package com.github.drdreo.tscjetbrainsplugin.toolWindow
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.WriteCommandAction
@@ -22,9 +22,9 @@ import com.intellij.testFramework.LightVirtualFile
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import org.jetbrains.plugins.template.MyBundle
-import org.jetbrains.plugins.template.services.MyProjectService
-import org.jetbrains.plugins.template.services.MyWebSocketClient
+import com.github.drdreo.tscjetbrainsplugin.MyBundle
+import com.github.drdreo.tscjetbrainsplugin.services.MyProjectService
+import com.github.drdreo.tscjetbrainsplugin.services.MyWebSocketClient
 import java.awt.BorderLayout
 import java.net.URI
 import java.net.URISyntaxException
