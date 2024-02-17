@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template.toolWindow
+package drdreo.plugins.tcs.toolWindow
 
 import CodeSuggestion
 import MyWebSocketService
@@ -21,8 +21,8 @@ import com.intellij.ui.components.JBLabel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.jetbrains.plugins.template.MyBundle
-import org.jetbrains.plugins.template.services.MyProjectService
+import drdreo.plugins.tcs.MyBundle
+import drdreo.plugins.tcs.services.MyProjectService
 import java.awt.BorderLayout
 import java.awt.event.ActionEvent
 import javax.swing.BorderFactory

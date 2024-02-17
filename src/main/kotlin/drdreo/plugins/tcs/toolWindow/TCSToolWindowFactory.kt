@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template.toolWindow
+package drdreo.plugins.tcs.toolWindow
 
 import com.intellij.openapi.diagnostic.LogLevel
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,7 +8,7 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.content.ContentFactory
 
 
-class MyToolWindowFactory : ToolWindowFactory {
+class TCSToolWindowFactory : ToolWindowFactory {
 
     init {
         thisLogger().setLevel(LogLevel.DEBUG)

@@ -1,9 +1,9 @@
-package org.jetbrains.plugins.template.services
+package drdreo.plugins.tcs.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import org.jetbrains.plugins.template.MyBundle
+import drdreo.plugins.tcs.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {
