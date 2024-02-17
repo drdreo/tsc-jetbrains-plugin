@@ -29,8 +29,9 @@ class MyWebSocketService(private val project: Project) : CoroutineScope by Corou
 
     private fun initializeWebSocket() {
         try {
-            println("initializing websocket client")
-            val serverUri = URI("ws://localhost:8088/ws")
+            val addr = "ws://localhost:8088/ws"
+            println("connection websocket client to " + addr)
+            val serverUri = URI(addr)
             websocketClientImpl = WebSocketClientImpl(serverUri).apply {
                 connect()
             }
