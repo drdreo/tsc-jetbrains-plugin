@@ -18,11 +18,11 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.testFramework.LightVirtualFile
 import com.intellij.ui.components.JBLabel
+import drdreo.plugins.tcs.MyBundle
+import drdreo.plugins.tcs.services.MyProjectService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import drdreo.plugins.tcs.MyBundle
-import drdreo.plugins.tcs.services.MyProjectService
 import java.awt.BorderLayout
 import java.awt.event.ActionEvent
 import javax.swing.BorderFactory
@@ -53,17 +53,6 @@ class TCSToolWindow(private val toolWindow: ToolWindow) :
 
         contentPanel.add(createSyntaxHighlightedEditorPanel(), BorderLayout.NORTH)
         contentPanel.add(createControlsPanel(toolWindow), BorderLayout.CENTER)
-
-        val buttonPanel = JPanel()
-        val label = JBLabel(MyBundle.message("randomLabel", "?"))
-        buttonPanel.add(label)
-        buttonPanel.add(JButton(MyBundle.message("shuffle")).apply {
-            addActionListener {
-                label.text = MyBundle.message("randomLabel", service.getRandomNumber())
-            }
-        })
-
-        contentPanel.add(buttonPanel, BorderLayout.SOUTH)
     }
 
     fun getContent(): JPanel {
@@ -120,7 +109,7 @@ class TCSToolWindow(private val toolWindow: ToolWindow) :
             FileTypeManager.getInstance().getFileTypeByFileName(currentFile.name)
         } else {
             // Fallback or default FileType if no file is open
-            FileTypeManager.getInstance().getFileTypeByExtension("java")
+            FileTypeManager.getInstance().getFileTypeByExtension("sh")
         }
 
         println(fileType)
@@ -137,7 +126,7 @@ class TCSToolWindow(private val toolWindow: ToolWindow) :
     }
 
     private fun insertCode() {
-        TODO("Insert not yet implemented")
+        snippetDocument?.let { service.insertCode(it.text) }
     }
 
     private fun subscribeToWebSocketEvents() {
