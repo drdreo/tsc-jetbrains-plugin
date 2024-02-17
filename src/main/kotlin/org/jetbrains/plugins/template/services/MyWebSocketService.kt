@@ -5,9 +5,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 import java.net.URI
 
-//@Serializable
+@Serializable
 data class CodeSuggestion(
     val user: String,
     val code: String
@@ -51,8 +53,7 @@ class MyWebSocketService(private val project: Project) : CoroutineScope by Corou
 
     private fun decodeMessage(message: String): CodeSuggestion {
         println("Decoding WebSocket message: $message")
-//        return Json.decodeFromString<CodeSuggestion>(message)
-        return CodeSuggestion("", "int let me go")
+        return Json.decodeFromString<CodeSuggestion>(message)
     }
 
     private fun closeWebSocket() {

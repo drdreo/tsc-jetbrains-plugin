@@ -7,7 +7,7 @@ fun environment(key: String) = providers.environmentVariable(key)
 plugins {
     id("java") // Java support
     alias(libs.plugins.kotlin) // Kotlin support
-//    alias(libs.plugins.serialization) // Apply Kotlin Serialization plugin
+    alias(libs.plugins.serialization) // Apply Kotlin Serialization plugin
     alias(libs.plugins.gradleIntelliJPlugin) // Gradle IntelliJ Plugin
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
@@ -25,7 +25,7 @@ repositories {
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
     implementation(libs.annotations)
-//    implementation(libs.kotlinxSerialization)
+    implementation(libs.kotlinxSerialization)
     implementation(libs.websocket) {
         exclude(group = "org.slf4j")
     }
