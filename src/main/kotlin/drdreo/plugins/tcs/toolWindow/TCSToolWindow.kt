@@ -143,7 +143,7 @@ class TCSToolWindow(private val toolWindow: ToolWindow) :
         ApplicationManager.getApplication().invokeLater {
             WriteCommandAction.runWriteCommandAction(toolWindow.project) {
                 snippetDocument?.setText(newCodeSuggestion.code)
-                snippetAuthor?.text = MyBundle.message("suggestionBy",  newCodeSuggestion.user)
+                snippetAuthor?.text = MyBundle.message("suggestionBy",  newCodeSuggestion.twitchId)
             }
         }
     }

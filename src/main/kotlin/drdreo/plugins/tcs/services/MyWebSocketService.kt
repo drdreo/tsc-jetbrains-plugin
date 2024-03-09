@@ -14,7 +14,7 @@ import java.net.URI
 
 @Serializable
 data class CodeSuggestion(
-    val user: String,
+    val twitchId: String,
     val code: String
 )
 
